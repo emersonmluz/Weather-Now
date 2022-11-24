@@ -36,14 +36,14 @@
                                     <constraint firstAttribute="width" secondItem="mKP-Vg-tAa" secondAttribute="height" multiplier="1:1" id="vkA-hR-Gyf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xS-b6-JKc">
-                                <rect key="frame" x="146.5" y="234" width="158.5" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xS-b6-JKc">
+                                <rect key="frame" x="188" y="234" width="117" height="84"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porto Alegre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-RM-PkR">
-                                <rect key="frame" x="167" y="328" width="138" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-RM-PkR">
+                                <rect key="frame" x="225.5" y="328" width="79.5" height="28"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -57,6 +57,9 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSU-u2-eQz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -78,6 +81,11 @@
                             <constraint firstItem="aa2-9a-60i" firstAttribute="leading" secondItem="6pV-Eh-sLs" secondAttribute="trailing" id="yqE-hC-2dA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="8DB-RM-PkR" id="L0l-Xg-t0f"/>
+                        <outlet property="grausLabel" destination="6xS-b6-JKc" id="gAR-kh-WBV"/>
+                        <outlet property="searchTextField" destination="6pV-Eh-sLs" id="GBq-tC-NRt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
