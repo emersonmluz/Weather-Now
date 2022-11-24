@@ -60,7 +60,6 @@ class ViewController: UIViewController {
                 self.weather = try decoder.decode(Weather.self, from: data!)
                 
                 DispatchQueue.main.async {
-                    print (self.weather!)
                     self.grausLabel.text = String(self.weather!.main["temp"]!)
                     self.cityLabel.text = (self.weather!.name)
                 }
