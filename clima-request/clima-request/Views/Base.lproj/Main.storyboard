@@ -65,8 +65,11 @@
                                                 <rect key="frame" x="0.0" y="50" width="300" height="234"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-Vg-tAa">
-                                                        <rect key="frame" x="235" y="-0.5" width="65" height="117.5"/>
+                                                        <rect key="frame" x="220" y="-0.5" width="80" height="117.5"/>
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="TD7-yp-U8D"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJ7-s4-Hc6" userLabel="tempInCityView">
                                                         <rect key="frame" x="0.0" y="117" width="300" height="117"/>
@@ -95,7 +98,8 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="mKP-Vg-tAa" firstAttribute="leading" secondItem="NJL-wB-Pcg" secondAttribute="leading" constant="235" id="lum-bP-QBh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mKP-Vg-tAa" secondAttribute="trailing" id="V5g-Su-kXp"/>
+                                                    <constraint firstItem="mKP-Vg-tAa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NJL-wB-Pcg" secondAttribute="leading" constant="220" id="xeL-UP-ZCC"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
