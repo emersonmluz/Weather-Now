@@ -34,6 +34,8 @@ class WeatherViewController: UIViewController {
         
         weather.delegate = self
         searchTextField.delegate = self
+        
+        touchScreen()
         // Do any additional setup after loading the view.
     }
     
@@ -61,6 +63,15 @@ class WeatherViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         
         self.present(alert, animated: true)
+    }
+    
+    @objc func dismissKeyboard () {
+        searchTextField.endEditing(true)
+    }
+    
+    func touchScreen () {
+        let touch = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(touch)
     }
     
 }
