@@ -25,6 +25,10 @@ struct WeatherBrain {
         request.httpMethod = "GET"
         request.addValue("aplication/json", forHTTPHeaderField: "Content-Type")
         
+        weatherDecodaer(request: request)
+    }
+    
+    func weatherDecodaer (request: URLRequest) {
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { data, response, error in
