@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var grausLabel: UILabel!
@@ -20,22 +20,30 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
        weather.delegate = self
+        searchTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
     
     @IBAction func searchButtonClick(_ sender: UIButton) {
-        guard searchTextField.text != nil && searchTextField.text != "" else {return}
+        searchCity()
+        searchTextField.endEditing(true)
+    }
+    
+    func searchCity () {
+        guard searchTextField.text != nil && searchTextField.text != "" else {
+            searchTextField.placeholder = "Digite uma cidade"
+            return }
         
         city = searchTextField.text!.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
         
-        weather.apiRequest(apiURL: "https://api.openweathermap.org/data/2.5/weather", appId: "aeefba332b49db396d425480b21571b2", units: "metric", city: city)
+        weather.apiRequest(city: city)
     }
     
     
 }
 
-extension ViewController: WeatherDelegate {
+extension WeatherViewController: WeatherDelegate {
     func requestSuccess(weather: WeatherData) {
         DispatchQueue.main.async {
             self.grausLabel.text = String(weather.main["temp"]!)
@@ -43,7 +51,19 @@ extension ViewController: WeatherDelegate {
         }
     }
     
-    func requestFailed(error: Error) {
-        print(error)
+    func decoderError() {
+        print("Dados não encontrados")
+    }
+}
+
+extension WeatherViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchCity()
+        textField.endEditing(true)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = ""
     }
 }

@@ -9,13 +9,16 @@ import Foundation
 
 protocol WeatherDelegate {
     func requestSuccess(weather: WeatherData)
-    func requestFailed(error: Error)
+    func decoderError()
 }
 
 struct WeatherBrain {
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather"
+    var appId = "aeefba332b49db396d425480b21571b2"
+    var units = "metric"
     var delegate: WeatherDelegate?
     
-    func apiRequest (apiURL: String, appId: String, units: String, city: String) {
+    func apiRequest (city: String) {
         
         let url = URL(string: "\(apiURL)?appid=\(appId)&units=\(units)&q=\(String(describing: city)),br")
         
@@ -24,14 +27,15 @@ struct WeatherBrain {
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.addValue("aplication/json", forHTTPHeaderField: "Content-Type")
-        
-        weatherDecodaer(request: request)
+    
+        weatherDecoder(request: request)
     }
     
-    func weatherDecodaer (request: URLRequest) {
+    func weatherDecoder (request: URLRequest) {
         let session = URLSession.shared
         
         let task = session.dataTask(with: request) { data, response, error in
+
             guard data != nil, error == nil else {return}
             
             do {
@@ -40,8 +44,8 @@ struct WeatherBrain {
                 
                 self.delegate?.requestSuccess(weather: weather)
 
-            } catch let error {
-                self.delegate?.requestFailed(error: error)
+            } catch {
+                self.delegate?.decoderError()
                 return
             }
         }
