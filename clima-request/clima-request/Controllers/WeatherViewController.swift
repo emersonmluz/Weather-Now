@@ -17,21 +17,20 @@ class WeatherViewController: UIViewController {
     
     var weather = WeatherBrain()
     var city: String = ""
-    var isLoading: Bool! {
+    var isLoading: Bool = false {
         didSet {
             if isLoading {
                 loadingView.isHidden = false
                 loadingActivityIndicator.startAnimating()
             } else {
-                loadingView.isHidden = true
                 loadingActivityIndicator.stopAnimating()
+                loadingView.isHidden = true
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isLoading = false
         
         weather.delegate = self
         searchTextField.delegate = self
@@ -69,8 +68,10 @@ extension WeatherViewController: WeatherDelegate {
     }
     
     func decoderError() {
-        print("Dados não encontrados")
-        isLoading = false
+        DispatchQueue.main.async {
+            print("Dados não encontrados")
+            self.isLoading = false
+        }
     }
 }
 
