@@ -28,19 +28,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dML-PK-lqs" userLabel="searchView">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-Eh-sLs">
-                                                        <rect key="frame" x="50" y="8" width="220" height="34"/>
-                                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-9a-60i">
-                                                        <rect key="frame" x="270" y="0.0" width="50" height="50"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-9a-60i">
+                                                        <rect key="frame" x="260" y="0.0" width="50" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="Gm3-ZY-phW"/>
-                                                            <constraint firstAttribute="width" secondItem="aa2-9a-60i" secondAttribute="height" multiplier="1:1" id="lRt-yA-0Wd"/>
+                                                            <constraint firstAttribute="width" secondItem="aa2-9a-60i" secondAttribute="height" multiplier="1:1" id="BPm-9r-DEl"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
@@ -49,15 +40,22 @@
                                                             <action selector="searchButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSU-u2-eQz"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-Eh-sLs">
+                                                        <rect key="frame" x="50" y="8" width="210" height="34"/>
+                                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="centerX" secondItem="dML-PK-lqs" secondAttribute="centerX" id="4Ju-8z-0Iy"/>
-                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="leading" secondItem="dML-PK-lqs" secondAttribute="leading" constant="50" id="9Nu-Bg-di0"/>
                                                     <constraint firstAttribute="height" constant="50" id="FJ2-j1-rxv"/>
-                                                    <constraint firstItem="aa2-9a-60i" firstAttribute="leading" secondItem="6pV-Eh-sLs" secondAttribute="trailing" id="GMh-3n-3zd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6pV-Eh-sLs" secondAttribute="trailing" constant="50" id="JtB-Lc-PjY"/>
-                                                    <constraint firstItem="aa2-9a-60i" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="nH1-kp-RFD"/>
-                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="pNB-YU-t5Z"/>
+                                                    <constraint firstItem="aa2-9a-60i" firstAttribute="top" secondItem="dML-PK-lqs" secondAttribute="top" id="Fsi-Hq-OYz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aa2-9a-60i" secondAttribute="trailing" constant="10" id="L3u-zN-KhG"/>
+                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="leading" secondItem="dML-PK-lqs" secondAttribute="leading" constant="50" id="fdw-MZ-yCP"/>
+                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="utn-Uv-RgJ"/>
+                                                    <constraint firstItem="aa2-9a-60i" firstAttribute="leading" secondItem="6pV-Eh-sLs" secondAttribute="trailing" id="vVQ-mp-tZj"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-wB-Pcg" userLabel="weatherStackView">
