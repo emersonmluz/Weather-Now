@@ -55,6 +55,13 @@ class WeatherViewController: UIViewController {
         weather.apiRequest(city: city)
     }
     
+    func alert () {
+        let alert = UIAlertController(title: nil, message: "Cidade não encontrada.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        
+        self.present(alert, animated: true)
+    }
     
 }
 
@@ -69,7 +76,7 @@ extension WeatherViewController: WeatherDelegate {
     
     func decoderError() {
         DispatchQueue.main.async {
-            print("Dados não encontrados")
+            self.alert()
             self.isLoading = false
         }
     }
