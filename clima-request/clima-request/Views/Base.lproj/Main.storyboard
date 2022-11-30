@@ -60,31 +60,48 @@
                                                     <constraint firstItem="6pV-Eh-sLs" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="pNB-YU-t5Z"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-wB-Pcg" userLabel="weatherStackView">
-                                                <rect key="frame" x="122" y="159" width="117" height="164"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-wB-Pcg" userLabel="weatherStackView">
+                                                <rect key="frame" x="0.0" y="50" width="300" height="234"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xS-b6-JKc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="84"/>
-                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="75"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-RM-PkR">
-                                                        <rect key="frame" x="0.0" y="100" width="79.5" height="28"/>
-                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-Vg-tAa">
-                                                        <rect key="frame" x="0.0" y="143.5" width="21" height="20.5"/>
+                                                        <rect key="frame" x="200" y="-0.5" width="100" height="117.5"/>
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="sw9-qR-aFE" userLabel="tempInCityStackView">
+                                                        <rect key="frame" x="0.0" y="117" width="300" height="117"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xS-b6-JKc">
+                                                                <rect key="frame" x="10" y="0.0" width="290" height="58.5"/>
+                                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="75"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DB-RM-PkR">
+                                                                <rect key="frame" x="10" y="58.5" width="290" height="58.5"/>
+                                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="6xS-b6-JKc" firstAttribute="leading" secondItem="sw9-qR-aFE" secondAttribute="leading" constant="10" id="tjp-ss-Byp"/>
+                                                            <constraint firstItem="8DB-RM-PkR" firstAttribute="leading" secondItem="sw9-qR-aFE" secondAttribute="leading" constant="10" id="tlp-Qn-EsG"/>
+                                                        </constraints>
+                                                    </stackView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="sw9-qR-aFE" firstAttribute="leading" secondItem="NJL-wB-Pcg" secondAttribute="leading" id="1rS-Mw-MNC"/>
+                                                    <constraint firstItem="mKP-Vg-tAa" firstAttribute="leading" secondItem="NJL-wB-Pcg" secondAttribute="leading" constant="200" id="lum-bP-QBh"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="dML-PK-lqs" firstAttribute="top" secondItem="H3k-fD-Wf5" secondAttribute="top" id="HKI-W4-8gO"/>
+                                            <constraint firstItem="NJL-wB-Pcg" firstAttribute="top" secondItem="dML-PK-lqs" secondAttribute="bottom" id="IhX-hm-s4T"/>
+                                            <constraint firstAttribute="bottom" secondItem="NJL-wB-Pcg" secondAttribute="bottom" id="Oj5-I9-cSK"/>
                                             <constraint firstAttribute="trailing" secondItem="dML-PK-lqs" secondAttribute="trailing" id="PaY-i1-Fxd"/>
+                                            <constraint firstItem="NJL-wB-Pcg" firstAttribute="leading" secondItem="H3k-fD-Wf5" secondAttribute="leading" id="aje-PB-Xti"/>
+                                            <constraint firstAttribute="trailing" secondItem="NJL-wB-Pcg" secondAttribute="trailing" constant="20" id="n6x-xb-gYl"/>
                                             <constraint firstItem="dML-PK-lqs" firstAttribute="leading" secondItem="H3k-fD-Wf5" secondAttribute="leading" id="rbK-38-8F1"/>
                                         </constraints>
                                     </view>
