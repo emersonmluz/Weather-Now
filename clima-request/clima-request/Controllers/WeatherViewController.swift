@@ -62,7 +62,7 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController: WeatherDelegate {
     func requestSuccess(weather: WeatherData) {
         DispatchQueue.main.async {
-            self.grausLabel.text = String(weather.main["temp"]!) + " °C"
+            self.grausLabel.text = String(Int(weather.main["temp"]!)) + " °C"
             self.cityLabel.text = (weather.name)
             self.isLoading = false
         }
