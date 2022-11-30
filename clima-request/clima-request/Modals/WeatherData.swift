@@ -1,13 +1,13 @@
 //
-//  Weather.swift
+//  WeatherData.swift
 //  clima-request
 //
-//  Created by Émerson M Luz on 24/11/22.
+//  Created by Émerson M Luz on 30/11/22.
 //
 
 import Foundation
 
-struct Weather: Decodable {
+struct WeatherData: Codable {
     var main: [String: Float]
     var wind: [String: Float]
     var id: Int
