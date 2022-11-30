@@ -12,14 +12,28 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var grausLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     var weather = WeatherBrain()
     var city: String = ""
+    var isLoading: Bool! {
+        didSet {
+            if isLoading {
+                loadingView.isHidden = false
+                loadingActivityIndicator.startAnimating()
+            } else {
+                loadingView.isHidden = true
+                loadingActivityIndicator.stopAnimating()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoading = false
         
-       weather.delegate = self
+        weather.delegate = self
         searchTextField.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -35,6 +49,8 @@ class WeatherViewController: UIViewController {
             searchTextField.placeholder = "Digite uma cidade"
             return }
         
+        isLoading = true
+        
         city = searchTextField.text!.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
         
         weather.apiRequest(city: city)
@@ -46,13 +62,15 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController: WeatherDelegate {
     func requestSuccess(weather: WeatherData) {
         DispatchQueue.main.async {
-            self.grausLabel.text = String(weather.main["temp"]!)
+            self.grausLabel.text = String(weather.main["temp"]!) + " °C"
             self.cityLabel.text = (weather.name)
+            self.isLoading = false
         }
     }
     
     func decoderError() {
         print("Dados não encontrados")
+        isLoading = false
     }
 }
 
