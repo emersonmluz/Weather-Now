@@ -55,11 +55,7 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func modeButtonClick(_ sender: UIButton) {
-        if !(nightMode!) {
-            nightMode = true
-        } else {
-            nightMode = false
-        }
+        nightMode = !(nightMode!)
     }
     
     
