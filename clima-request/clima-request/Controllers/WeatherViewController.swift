@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController {
     
     var weather = WeatherBrain()
     var city: String = ""
-    var nightMode: Bool = false {
+    var nightMode: Bool? {
         didSet {
             if overrideUserInterfaceStyle == .light {
                 overrideUserInterfaceStyle = .dark
@@ -45,6 +45,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nightMode = false
+        
         weather.delegate = self
         searchTextField.delegate = self
         
@@ -53,7 +55,7 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func modeButtonClick(_ sender: UIButton) {
-        if !(nightMode) {
+        if !(nightMode!) {
             nightMode = true
         } else {
             nightMode = false
