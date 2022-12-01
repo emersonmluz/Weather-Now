@@ -14,6 +14,7 @@
 		EEA1F714292FE6380036DE1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA1F713292FE6380036DE1C /* Assets.xcassets */; };
 		EEA1F717292FE6380036DE1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA1F715292FE6380036DE1C /* LaunchScreen.storyboard */; };
 		EEA1F722292FEAF00036DE1C /* WeatherBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1F721292FEAF00036DE1C /* WeatherBrain.swift */; };
+		EEBA432329383D89008ADE35 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBA432229383D89008ADE35 /* Sky.swift */; };
 		EEEFE0FC2937A9F7007730BB /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEFE0FB2937A9F7007730BB /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		EEA1F716292FE6380036DE1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEA1F718292FE6380036DE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEA1F721292FEAF00036DE1C /* WeatherBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBrain.swift; sourceTree = "<group>"; };
+		EEBA432229383D89008ADE35 /* Sky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
 		EEEFE0FB2937A9F7007730BB /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			children = (
 				EEA1F721292FEAF00036DE1C /* WeatherBrain.swift */,
 				EEEFE0FB2937A9F7007730BB /* WeatherData.swift */,
+				EEBA432229383D89008ADE35 /* Sky.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				EEEFE0FC2937A9F7007730BB /* WeatherData.swift in Sources */,
 				EEA1F70F292FE6350036DE1C /* WeatherViewController.swift in Sources */,
 				EEA1F70B292FE6350036DE1C /* AppDelegate.swift in Sources */,
+				EEBA432329383D89008ADE35 /* Sky.swift in Sources */,
 				EEA1F70D292FE6350036DE1C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

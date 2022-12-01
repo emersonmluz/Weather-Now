@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var skyImage: UIImageView!
     
     var weather = WeatherBrain()
     var city: String = ""
@@ -21,8 +22,10 @@ class WeatherViewController: UIViewController {
         didSet {
             if overrideUserInterfaceStyle == .light {
                 overrideUserInterfaceStyle = .dark
+                skyImage.tintColor = UIColor.white
             } else {
                 overrideUserInterfaceStyle = .light
+                skyImage.tintColor = UIColor.systemGray4
             }
         }
     }
@@ -96,7 +99,17 @@ class WeatherViewController: UIViewController {
 
 extension WeatherViewController: WeatherDelegate {
     func requestSuccess(weather: WeatherData) {
+        
         DispatchQueue.main.async {
+            
+            if weather.sky[0].main == "Sun" {
+                self.skyImage.image = UIImage(systemName: "sun.max.fill")
+            } else if weather.sky[0].main == "Clouds" {
+                self.skyImage.image = UIImage(systemName: "cloud.fill")
+            } else if weather.sky[0].main == "Rain" {
+                self.skyImage.image = UIImage(systemName: "cloud.rain.fill")
+            }
+            
             self.grausLabel.text = String(Int(weather.main["temp"]!)) + " °C"
             self.cityLabel.text = (weather.name)
             self.isLoading = false

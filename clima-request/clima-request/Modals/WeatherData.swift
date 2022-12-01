@@ -8,6 +8,13 @@
 import Foundation
 
 struct WeatherData: Codable {
+    var sky: [Sky]
     var main: [String: Float]
     var name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case sky = "weather"
+        case main
+        case name
+    }
 }
