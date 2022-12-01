@@ -17,6 +17,15 @@ class WeatherViewController: UIViewController {
     
     var weather = WeatherBrain()
     var city: String = ""
+    var nightMode: Bool = false {
+        didSet {
+            if overrideUserInterfaceStyle == .light {
+                overrideUserInterfaceStyle = .dark
+            } else {
+                overrideUserInterfaceStyle = .light
+            }
+        }
+    }
     var isLoading: Bool = false {
         didSet {
             if isLoading {
@@ -29,6 +38,7 @@ class WeatherViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +47,14 @@ class WeatherViewController: UIViewController {
         
         touchScreen()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func modeButtonClick(_ sender: UIButton) {
+        if !(nightMode) {
+            nightMode = true
+        } else {
+            nightMode = false
+        }
     }
     
     

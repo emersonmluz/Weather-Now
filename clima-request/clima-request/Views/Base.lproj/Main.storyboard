@@ -29,7 +29,21 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dML-PK-lqs" userLabel="searchView">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-9a-60i">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-HY-kGy">
+                                                        <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="Djf-XR-BR6"/>
+                                                            <constraint firstAttribute="width" secondItem="iEf-HY-kGy" secondAttribute="height" multiplier="1:1" id="qc3-mw-lvS"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="moonphase.first.quarter" catalog="system">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="modeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dM-El-74U"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-9a-60i" userLabel="searchButton">
                                                         <rect key="frame" x="260" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="aa2-9a-60i" secondAttribute="height" multiplier="1:1" id="BPm-9r-DEl"/>
@@ -44,7 +58,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-Eh-sLs">
-                                                        <rect key="frame" x="50" y="8" width="210" height="34"/>
+                                                        <rect key="frame" x="65" y="8" width="195" height="34"/>
                                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" name="fontsColor"/>
@@ -56,7 +70,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="FJ2-j1-rxv"/>
                                                     <constraint firstItem="aa2-9a-60i" firstAttribute="top" secondItem="dML-PK-lqs" secondAttribute="top" id="Fsi-Hq-OYz"/>
                                                     <constraint firstAttribute="trailing" secondItem="aa2-9a-60i" secondAttribute="trailing" constant="10" id="L3u-zN-KhG"/>
-                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="leading" secondItem="dML-PK-lqs" secondAttribute="leading" constant="50" id="fdw-MZ-yCP"/>
+                                                    <constraint firstItem="6pV-Eh-sLs" firstAttribute="leading" secondItem="iEf-HY-kGy" secondAttribute="trailing" constant="5" id="kFf-mR-GD5"/>
+                                                    <constraint firstItem="iEf-HY-kGy" firstAttribute="leading" secondItem="dML-PK-lqs" secondAttribute="leading" constant="10" id="krV-5x-Z9q"/>
+                                                    <constraint firstItem="iEf-HY-kGy" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="qSn-sC-smc"/>
                                                     <constraint firstItem="6pV-Eh-sLs" firstAttribute="centerY" secondItem="dML-PK-lqs" secondAttribute="centerY" id="utn-Uv-RgJ"/>
                                                     <constraint firstItem="aa2-9a-60i" firstAttribute="leading" secondItem="6pV-Eh-sLs" secondAttribute="trailing" id="vVQ-mp-tZj"/>
                                                 </constraints>
@@ -172,6 +188,7 @@
     <resources>
         <image name="background" width="2000" height="1000"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="moonphase.first.quarter" catalog="system" width="128" height="123"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
         <namedColor name="fontsColor">
             <color red="0.063059362002376745" green="0.063683712121212155" blue="0.063683712121212155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
